@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body {
+  background-color: #FAF6EF;
+  color: #2B2926;
+  font-family: 'Noto Sans Thai', 'Inter', system-ui, sans-serif;
+}
+
+/* Bigger default tap targets everywhere for readability */
+button, input, select {
+  font-family: inherit;
+}
+
+/* ---------- PRINT LAYOUT ---------- */
+@media print {
+  @page {
+    size: A4;
+    margin: 16mm;
+  }
+
+  body {
+    background: #fff !important;
+  }
+
+  /* Hide everything by default, show only the print report */
+  body * {
+    visibility: hidden;
+  }
+
+  #print-report, #print-report * {
+    visibility: visible;
+  }
+
+  #print-report {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    background: #fff;
+    color: #000;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+}
